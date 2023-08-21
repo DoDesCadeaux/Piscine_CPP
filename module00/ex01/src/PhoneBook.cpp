@@ -51,11 +51,20 @@ void PhoneBook::displayContacts() const {
 }
 
 void PhoneBook::displayIndexedContact() const {
-	int	index;
+	std::string	input;
+	int			index;
+
 
 	std::cout << "Enter the contact index" << std::endl;
-	std::cin >> index;
+	std::cin >> input;
 	system("clear");
+	try {
+		index = std::stoi(input);
+	}
+	catch (const std::exception&) {
+		std::cout << "Invalid input! Please enter a valid number." << std::endl;
+		return;
+	}
 
 	if (index < 0 || index >= currentSize)
 	{
