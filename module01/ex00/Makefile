@@ -3,7 +3,7 @@
 ################################################################################
 
 
-NAME	= PhoneBook
+NAME	= Brainz
 CC 		= g++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 DFLAGS	= -MMD -MF $(@:.o=.d)
@@ -18,11 +18,11 @@ NOVISU 	= 0 # 1 = no progress bar usefull when tty is not available
 
 FILE_EXTENSION	=	.cpp
 
-SRCS_PATH		=	./src
+SRCS_PATH		=	./
 
-INCLUDE_PATH	=	./includes
+INCLUDE_PATH	=	./
 
-SRCS			=	Contact.cpp	PhoneBook.cpp	\
+SRCS			=	Zombie.cpp	newZombie.cpp	randomChump.cpp	\
 
 MAIN			=	main.cpp
 
@@ -51,15 +51,15 @@ NO_COLOR    = \033[m
 
 COM_STRING   = "Compiling:"
 
-HASH	= 
+HASH	=
 
-ifeq ($(OS),Windows_NT) 
+ifeq ($(OS),Windows_NT)
     detected_OS := Windows
 else
     detected_OS := $(shell sh -c 'uname 2>/dev/null || echo Unknown')
 endif
 
-ifeq ($(detected_OS),Darwin) 
+ifeq ($(detected_OS),Darwin)
 	RUN_CMD = script -q $@.log $1 > /dev/null; \
 				RESULT=$$?
 else ifeq ($(detected_OS),Linux)
