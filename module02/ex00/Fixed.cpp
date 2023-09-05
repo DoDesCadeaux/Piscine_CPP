@@ -4,7 +4,7 @@ Fixed::Fixed() : value(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(int valueToSet) : value(valueToSet) {
+Fixed::Fixed(const int valueToSet) : value(valueToSet) {
 	std::cout << "Parametric constructor called" << std::endl;
 }
 

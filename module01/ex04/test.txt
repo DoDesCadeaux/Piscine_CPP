@@ -1,4 +1,0 @@
-Hello world! This is a sample text.
-This text contains multiple instances of the word "This".
-This word "This" will be replaced.
-End of text.

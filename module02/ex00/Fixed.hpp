@@ -11,6 +11,7 @@ private:
 public:
 	Fixed();
 	Fixed(const Fixed &f);
+	Fixed(const int valueToSet);
 	~Fixed();
 
 	Fixed	&operator=(const Fixed &other);
