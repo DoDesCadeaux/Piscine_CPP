@@ -1,15 +1,15 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::~ClapTrap() {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string &n) : _name(n), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
-	std::cout << "Parametric Constructor called" << std::endl;
+ClapTrap::ClapTrap(const std::string &n, int hp, int ep, int ad) : _name(n), _hitPoints(hp), _energyPoints(ep), _attackDamage(ad) {
+	std::cout << "ClapTrap Parametric Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap Copy constructor called" << std::endl;
 
 	this->_name = other._name;
 	this->_hitPoints = other._hitPoints;
@@ -43,11 +43,11 @@ void ClapTrap::attack(const std::string &target) {
 
 void ClapTrap::takeDamage(unsigned int amount) {
 	if (this->_hitPoints <= 0) {
-		std::cout << "ClapTrap " << this->_name <<" is dead, you're hitting a corpse" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " is dead, you're hitting a corpse" << std::endl;
 		return;
 	}
 	this->_hitPoints -= amount;
-	std::cout << "ClapTrap " << this->_name <<" lost " << amount << " hit points" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " lost " << amount << " hit points" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
