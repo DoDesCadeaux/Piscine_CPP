@@ -6,15 +6,15 @@ int main(void) {
 
 	// Test de la fonction attack
 	scav.attack("SVTP2");
-	scav2.takeDamage(scav.getAttackDamage());  // supposez que getAttackDamage() retourne la valeur d'Attack damage
+	scav2.takeDamage(scav.getAttackDamage());
 
-	scav2.takeDamage(100);
 	// Test de la fonction beRepaired
 	scav2.beRepaired(5);
 
 	// Test de l'attaque sans points d'énergie
 	for (int i = 0; i < 12; ++i) {
 		scav.attack("SVTP2");
+		scav2.takeDamage(scav.getAttackDamage());
 	}
 
 	// Test de la réparation sans points d'énergie

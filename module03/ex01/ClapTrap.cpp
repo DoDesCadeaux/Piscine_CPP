@@ -1,11 +1,7 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::~ClapTrap() {
-	std::cout << "ClapTrap Destructor called" << std::endl;
-}
-
 ClapTrap::ClapTrap(const std::string &n, int hp, int ep, int ad) : _name(n), _hitPoints(hp), _energyPoints(ep), _attackDamage(ad) {
-	std::cout << "ClapTrap Parametric Constructor called" << std::endl;
+	std::cout << "ClapTrap Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
@@ -26,6 +22,10 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
 		this->_attackDamage = other._attackDamage;
 	}
 	return *this;
+}
+
+ClapTrap::~ClapTrap() {
+	std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string &target) {
