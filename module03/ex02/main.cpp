@@ -1,8 +1,8 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void) {
-	ScavTrap scav("SVTP");
-	ScavTrap scav2("SVTP2");
+	FragTrap scav("SVTP");
+	FragTrap scav2("SVTP2");
 
 	// Test de la fonction attack
 	scav.attack("SVTP2");

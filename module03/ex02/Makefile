@@ -3,8 +3,8 @@
 ################################################################################
 
 
-NAME	= ex01
-CC 		= g++
+NAME	= ex02
+CC 		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 DFLAGS	= -MMD -MF $(@:.o=.d)
 AUTHOR	= dduraku
@@ -22,7 +22,7 @@ SRCS_PATH		=	./
 
 INCLUDE_PATH	=	./
 
-SRCS			=	ClapTrap.cpp	ScavTrap.cpp\
+SRCS			=	ClapTrap.cpp	ScavTrap.cpp	FragTrap.cpp\
 
 MAIN			=	main.cpp
 

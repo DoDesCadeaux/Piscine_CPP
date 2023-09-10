@@ -67,6 +67,3 @@ void ScavTrap::beRepaired(unsigned int amount) {
 void ScavTrap::guardGate() {
 	std::cout << "ScavTrap " << this->_name << " is on gate keeper mode" << std::endl;
 }
-
-
-scavCopy = ScavTrap(other)
