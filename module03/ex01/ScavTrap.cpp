@@ -56,11 +56,17 @@ void ScavTrap::beRepaired(unsigned int amount) {
 		std::cout << "ScavTrap " << this->_name << " is dead, can't repair" << std::endl;
 		return;
 	} else if (this->_energyPoints <= 0) {
-		std::cout << "ScavTrap " << this->_name << " have 0 energy" << std::endl;
+		std::cout << "ScavTrap " << this->_name << " has no energy, can't repair" << std::endl;
 		return;
 	}
+
+	this->_energyPoints--;
+
 	this->_hitPoints += amount;
-	std::cout << "ScavTrap " << this->_name << " repaired " << amount << " hit points" << std::endl;
+	if (this->_hitPoints > 100)
+		this->_hitPoints = 100;
+
+	std::cout << "ScavTrap " << this->_name << " repaired and now has " << this->_hitPoints << " hit points" << std::endl;
 }
 
 

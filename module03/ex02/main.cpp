@@ -8,7 +8,8 @@ int main(void) {
 	scav.attack("SVTP2");
 	scav2.takeDamage(scav.getAttackDamage());  // supposez que getAttackDamage() retourne la valeur d'Attack damage
 
-	scav2.takeDamage(100);
+	std::cout << "AD = " << scav.getAttackDamage() << std::endl;
+	scav2.takeDamage(30);
 	// Test de la fonction beRepaired
 	scav2.beRepaired(5);
 
