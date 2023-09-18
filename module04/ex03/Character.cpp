@@ -1,14 +1,14 @@
 #include "Character.hpp"
 
 Character::Character(const std::string &name) : _name(name) {
-	std::cout << "Character " << this->_name << " default constructor called" << std::endl;
+	// std::cout << "Character " << this->_name << " default constructor called" << std::endl;
 	for (int i = 0; i < 4; i++) {
 		this->_inventoryMaterias[i] = NULL;
 	}
 }
 
 Character::Character(const Character &other) {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	this->_name = other._name;
 
 	for (int i = 0; i < 4; i++) {

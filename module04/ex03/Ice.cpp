@@ -1,11 +1,11 @@
 #include "Ice.hpp"
 
 Ice::Ice() : AMateria("ice") {
-	std::cout << "Ice default constructor called" << std::endl;
+	// std::cout << "Ice default constructor called" << std::endl;
 }
 
 Ice::Ice(const std::string &type) : AMateria(type) {
-	std::cout << "Ice parametric constructor called" << std::endl;
+	// std::cout << "Ice parametric constructor called" << std::endl;
 }
 
 Ice::Ice(const Ice &other) : AMateria(other) {
@@ -19,7 +19,7 @@ Ice &Ice::operator=(const Ice &other) {
 }
 
 Ice::~Ice() {
-	std::cout << "Ice destructor called" << std::endl;
+	// std::cout << "Ice destructor called" << std::endl;
 }
 
 Ice *Ice::clone() const {

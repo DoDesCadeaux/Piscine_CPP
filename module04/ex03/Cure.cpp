@@ -1,11 +1,11 @@
 #include "Cure.hpp"
 
 Cure::Cure() : AMateria("cure") {
-	std::cout << "Cure default constructor called" << std::endl;	
+	// std::cout << "Cure default constructor called" << std::endl;	
 }
 
 Cure::Cure(const std::string &type) : AMateria(type) {
-	std::cout << "Cure parametric constructor called" << std::endl;
+	// std::cout << "Cure parametric constructor called" << std::endl;
 }
 
 Cure::Cure(const Cure &other) : AMateria(other) {
@@ -19,7 +19,7 @@ Cure &Cure::operator=(const Cure &other) {
 }
 
 Cure::~Cure() {
-	std::cout << "Cure destructor called" << std::endl;
+	// std::cout << "Cure destructor called" << std::endl;
 }
 
 Cure *Cure::clone() const {
