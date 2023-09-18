@@ -5,6 +5,11 @@ Character::Character(const std::string &name) : _name(name) {
 	for (int i = 0; i < 4; i++) {
 		this->_inventoryMaterias[i] = NULL;
 	}
+
+    for (int i = 0; i < 4; i++) {
+        _trash[i] = NULL;
+    }
+    _trashSize = 0;
 }
 
 Character::Character(const Character &other) {
@@ -43,6 +48,7 @@ Character::~Character() {
 	for (int i = 0; i < 4; i++) {
 		delete this->_inventoryMaterias[i];
 	}
+    emptyTrash();
 }
 
 void Character::equip(AMateria *m) {
@@ -56,16 +62,20 @@ void Character::equip(AMateria *m) {
 }
 
 void Character::unequip(int idx) {
-    if (idx < 0 || idx > 3) {
-        std::cout << "Bad unequip slot" << std::endl;
+    if (idx < 0 || idx >= 4 || !this->_inventoryMaterias[idx])
         return;
+    if (this->_trashSize >= 4)
+        emptyTrash();
+    this->_trash[this->_trashSize++] = this->_inventoryMaterias[idx];
+    this->_inventoryMaterias[idx] = NULL;
+}
+
+void Character::emptyTrash() {
+    for (int i = 0; i < this->_trashSize; i++) {
+        delete this->_trash[i];
+        this->_trash[i] = NULL;
     }
-    if (this->_inventoryMaterias[idx]) {
-        this->_inventoryMaterias[idx] = NULL;
-    } else if (this->_inventoryMaterias[idx] == NULL) {
-        std::cout << "Inventory slot empty. Nothing to unequip" << std::endl;
-        return;
-    }
+    this->_trashSize = 0;
 }
 
 std::string const & Character::getName() const {

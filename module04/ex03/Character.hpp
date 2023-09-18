@@ -7,6 +7,8 @@ class Character : public ICharacter {
 private:
 	AMateria*	_inventoryMaterias[4];
 	std::string	_name;
+	AMateria* _trash[4];
+    int _trashSize;
 
 public:
 	Character(const std::string & name);
@@ -16,6 +18,7 @@ public:
 
 	~Character();
 
+	void emptyTrash();
 	virtual std::string const & getName() const;
 	virtual void equip(AMateria *m);
 	virtual void unequip(int idx);

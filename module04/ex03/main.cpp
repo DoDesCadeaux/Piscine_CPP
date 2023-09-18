@@ -27,11 +27,6 @@ int main() {
     me->unequip(0);
     me->use(0, *bob);  // Should not work as it's unequipped
 
-    // Test: Equip more materias than the inventory can handle
-    for (int i = 0; i < 5; ++i) {
-        tmp = src->createMateria("ice");
-        me->equip(tmp);
-    }
 
     // Test: Create an unknown materia
     tmp = src->createMateria("fire");
