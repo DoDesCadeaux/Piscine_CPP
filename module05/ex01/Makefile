@@ -3,7 +3,7 @@
 ################################################################################
 
 
-NAME	= ex00
+NAME	= ex01
 CC 		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 DFLAGS	= -MMD -MF $(@:.o=.d)
@@ -22,7 +22,7 @@ SRCS_PATH		=	./
 
 INCLUDE_PATH	=	./
 
-SRCS			=	Bureaucrat.cpp	\
+SRCS			=	Bureaucrat.cpp	Form.cpp\
 
 MAIN			=	main.cpp
 

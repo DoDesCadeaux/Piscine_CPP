@@ -1,17 +1,23 @@
 #include "Bureaucrat.hpp"
 
-int main(void) {
-
-	Bureaucrat	ramy("Ramy", 149);
-
+int main(void)
+{
 	try {
-		std::cout << "Before decrementation : " << ramy.getGrade() << std::endl;
-		ramy.decrementGrade();
-		std::cout << "After decrementation : " << ramy.getGrade() << std::endl;
+		Bureaucrat test("Debile", 149);
+		Bureaucrat test2("Golmon", 1);
+		std::cout << test << std::endl;
+		std::cout << test2 << std::endl;
+		test.decrementGrade();
+		test2.incrementGrade();
 	}
-	catch (Bureaucrat::GradeTooLowException &e) {
-		std::cout << e.what() << std::endl;
-		std::cout << "Verification after bad decrementation : " << ramy.getGrade() << std::endl;
+	catch (Bureaucrat::GradeTooHighException &e)
+	{
+		std::cout << "Exception : " << e.what() << std::endl;
 	}
+	catch (Bureaucrat::GradeTooLowException &e)
+	{
+		std::cout << "Exception : " << e.what() << std::endl;
+	}
+
 	return 0;
 }
