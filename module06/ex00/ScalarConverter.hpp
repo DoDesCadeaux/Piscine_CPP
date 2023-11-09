@@ -6,7 +6,7 @@
 
 class ScalarConverter {
 private:
-	ScalarConverter(const std::string &literal);
+	ScalarConverter();
 
 public:
 	ScalarConverter(const ScalarConverter &other);
