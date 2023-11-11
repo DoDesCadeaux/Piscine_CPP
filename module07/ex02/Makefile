@@ -3,7 +3,7 @@
 ################################################################################
 
 
-NAME	= ex00
+NAME	= ex02
 CC 		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 DFLAGS	= -MMD -MF $(@:.o=.d)
