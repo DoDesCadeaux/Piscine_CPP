@@ -2,6 +2,7 @@
 #include <vector>
 #include <iostream>
 #include <stack>
+#include <queue>
 
 bool triCroissant(int a, int b) {
 	return (a < b);
@@ -65,6 +66,26 @@ std::string	reversedString(std::string toReverse) {
 	return toReverse;
 }
 
+void initQueue(std::queue<char> &file) {
+
+	for (unsigned int c = 65; c <= 90; ++c) {
+		file.push(c);
+	}
+}
+
+void displayQueue(std::queue<char> &file) {
+	if (file.size() == 0)
+		throw std::range_error("Queue empty");
+
+	for (size_t i = 0; i < file.size(); ++i) {
+		std::cout << static_cast<char>(file.front()) << " ";
+		file.pop();
+		--i;
+	}
+
+	std::cout << std::endl;
+}
+
 
 int main(void) {
 	std::vector<int> vect = initVector(46);
@@ -102,6 +123,15 @@ int main(void) {
 	toReverse = reversedString(toReverse);
 	std::cout << toReverse << std::endl;
 
+	//=======================================================//
+
+	std::queue<char> file;
+	initQueue(file);
+	try {
+		displayQueue(file);
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 
 	return 0;
 }
