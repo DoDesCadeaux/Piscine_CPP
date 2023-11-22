@@ -10,13 +10,17 @@ int main(int argc, char **argv) {
 	std::ifstream input;
 	input.open(argv[1]);
 	if (!input) {
+		std::cerr << "open: not such file or no access rights: " << argv[1] << std::endl;
 		return 1;
 	}
 
 	std::ifstream ifs;
-	ifs.open("data.csv");
-	if (!ifs)
+	std::string filename = "data.csv";
+	ifs.open(filename);
+	if (!ifs) {
+		std::cerr << "open: not such file or no access rights: " << filename << std::endl;
 		return 1;
+	}
 
 	std::map<std::string, float> datamap = fillMapCSV(ifs);
 
