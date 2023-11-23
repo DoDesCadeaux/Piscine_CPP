@@ -56,24 +56,24 @@ bool isValidDate(std::string &date) {
 	return (day <= daysInMonth[month - 1]);
 }
 
-bool checkSpecial(std::string &line) {
+bool tooManySpecials(std::string &line) {
 		long countDot = std::count(line.begin(), line.end(), '.');
 		long countDash = std::count(line.begin(), line.end(), '-');
 		long countPipe = std::count(line.begin(), line.end(), '|');
 		long countSpace = std::count(line.begin(), line.end(), ' ');
 
 		if (countDash > 3 || countDot > 1 || countPipe > 1 || countSpace > 2) {
-			return false;
+			return true;
 		}
 
-		return true;
+		return false;
 }
 
 bool checkLine(std::string &line) {
 	if (line.empty())
 		return false;
 	char autorisedToken [] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '|', ' ', '-', '.'};
-	if (!checkSpecial(line))
+	if (tooManySpecials(line))
 		return false;
 	for (unsigned long it = 0; it < line.size() ; ++it) {
 		for (size_t j = 0; j < sizeof(autorisedToken); j++) {
